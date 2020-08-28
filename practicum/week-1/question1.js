@@ -6,5 +6,14 @@ For example given the input array [5, 6, 1], the running sum is
 */
 
 var runningSum = function(input) {
-   
+    let a = []
+    let sum = 0
+    for (let i = 0; i < input.length; i += 1)
+    { 
+        //compute the summon such far us far
+        sum += input[i]
+        a.push(sum)
+  
+    };
+    return a
 };
