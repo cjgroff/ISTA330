@@ -17,14 +17,7 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
 
          }
          sum += extraCookies
-         if (sum%cookies.length == 0)
-         {
-                 return true
-         }
-         else 
-         {
-                 return false 
-         }
-
+         return sum%cookies.length == 0
+         
 
  };
