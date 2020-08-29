@@ -5,6 +5,9 @@ We are allowed to do one of the following three operations:
 2. divide the number by 4
 3. subtract 1 from the number
 Find the minimum number of operations to reduce a given number to zero.
+ n /= 4
+    n /= 3
+    n -= 1
 Example: 
 input: 12
 output: 3
@@ -12,6 +15,27 @@ output: 3
 */
 
 var minimalReduction = function(n) {
+    let count = 0
+    while (n != 0){
+        count += 1
+        if (n%4 == 0)
+        {
+            n /= 4
+            
+        }
+        else if (n%3 == 0)
+        {
+            n /= 3
+            
+        }
+        else
+        {
+            n -= 1
+            
+        }
+    }
+    return count
+   
 
 };
 
