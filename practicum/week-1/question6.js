@@ -7,6 +7,7 @@ output: 3
 */
 
 var median = function(input) {
+    input.sort()
     let mid = Math.floor(input.length/2)
     console.log('mid:', mid)
     if (input.length%2 == 0)
