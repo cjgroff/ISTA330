@@ -9,5 +9,20 @@ output: [5, 5, 2, 2, 2, 2]
 */
 
 var decode = function(input) {
+    let dubarr = []
+    for (let i = 0; i < input.length; i += 2)
+    {
+
+        for (let j = 0; j < input[i]; j += 1)
+        {
+            dubarr.push(input[i+1])
+        }
+        
+        
+        
+
+        
+    }
+    return dubarr
 
 };
