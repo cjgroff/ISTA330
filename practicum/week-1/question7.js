@@ -11,9 +11,26 @@ output: 4
        whatever other pairs we choose the sum of the minimums will not exceed 4.
 */
 
+var sort = function(input){
+       for (let i = 0; i < input.length; i+= 1)
+       {
+           let minpos = i
+           for(let j = minpos; j < input.length; j += 1)
+           {
+               if(input[j]< input[minpos])
+               {
+                   minpos = j
+               }
+           }
+           //At this minpos minpos hold the index of small value.
+           let temp = input[i]
+           input[i] = input[minpos]
+           input[minpos] = temp
+       }
+   }
 var maxSumOfMins = function(input) {
        let Max = 0
-       input.sort()
+       sort(input)
        for (let i = 0; i < input.length; i += 2)
        {
               Max += input[i]
