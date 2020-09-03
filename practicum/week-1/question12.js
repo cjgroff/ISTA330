@@ -1,5 +1,6 @@
 /*
 A string, input, which contains only letters a and b is given.
+  
 A list of substrings s1, s2, .., sn is called a partition for input if and only if
   input == s1 + s2 + ... + sn.
 
@@ -11,8 +12,10 @@ Example:
 input: 'abaabbabab'
 output: 4 because the following partition has the highest number of balanced substrings:
           'ab', 'aabb', 'ab', 'ab'
+
 */
 
 var maxBalanceNumber = function(input) {
+
 
 };
