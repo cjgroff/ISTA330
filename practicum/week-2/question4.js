@@ -13,5 +13,18 @@ Example:
 */
 
 var hasDuplicates = function(input) {
-
+    dic = {}
+    for (let i = 0; i < input.length; i+= 1)
+    {
+        let value = input[i]
+        if(dic[value] == undefined)//We have not see this value 
+        {
+            dic[value] = true
+        }
+        else // We have see this value it a dub
+        {
+            return true
+        }
+    }
+    return false
 };
