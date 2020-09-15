@@ -16,8 +16,29 @@ Return the number of teams you can form given the conditions. (soldiers can be p
          output: 1
          We can only form one team given the 
          conditions: (2,3,4)
+         i = 0 input[i] = 2
+         j = 1 input [j] = 5
+         k = 2 input [k] = 3
+
 */
 
 var howManyTeams = function(input) {
-   
+        let count = 0
+   for(let i = 0; i < input.length; i++)
+   {
+        for(let j = i+1; j < input.length; j++)
+        {
+                for(let k = j+1; k < input.length; k++)
+                {
+                        if (input[i]< input[j] && input[j] < input[k])
+                        {
+                                count++       
+                        }
+                        console.log(input[i],input [j],input [k])
+                        
+                }       
+        }
+
+   }
+   return count
 };

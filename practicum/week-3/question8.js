@@ -11,7 +11,24 @@ Example:
 input:  [2,0,2,1,1,0]
 output: [0,0,1,1,2,2]
 */
-
+var sort = function(input){
+    for (let i = 0; i < input.length; i+= 1)
+    {
+        let minpos = i
+        for(let j = minpos; j < input.length; j += 1)
+        {
+            if(input[j]< input[minpos])
+            {
+                minpos = j
+            }
+        }
+        //At this minpos minpos hold the index of small value.
+        let temp = input[i]
+        input[i] = input[minpos]
+        input[minpos] = temp
+    }
+}
 var sortColors = function(input) {
-
+    sort(input)
+    return input
 };
