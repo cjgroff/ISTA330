@@ -25,5 +25,14 @@ output:  4
 */
 
 var longestNested = function(A) {
-
+     Ndic = {}
+     let i = 0
+     let count = 0
+     while(Ndic[A[i]] == undefined )
+     {
+          Ndic[A[i]] = true
+          i = A[i]
+          count += 1
+     }
+     return count
 };
