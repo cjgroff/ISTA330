@@ -32,10 +32,26 @@ Input is guaranteed to be within the range from 1 to 3999.
 Example:
 input: "IV"
 output: 4
+I
+V
 */
 
 var romanToInteger = function(s) {
     romantoI= {"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
-
+    // X X I V = 10 + 10 -1 + 5 24
+    let sum = 0
+    for (let i = 0 ; i < s.length; i++)
+    {
+        // if the next dig does not exist or if dig is great then next dig add value of dig
+        if (s[i+1] == undefined || romantoI[s[i]] >= romantoI[s[i+1]])
+        {
+            sum += romantoI[s[i]]
+        }
+        else
+        {
+            sum -= romantoI[s[i]]
+        }
+    }
+return sum
 
 };
