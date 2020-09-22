@@ -83,8 +83,8 @@
         }
         let daffodil = new Flower('Daffodil', 'daffodil.png');
         let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
-        let lily = new Flower('Lily', 'lily.png');
-        let daisy = new Flower('Daisy', 'daisy.png');
+        let lily = new Flower('Lily', 'lily.jpg');
+        let daisy = new Flower('Daisy', 'daisy.jpg');
         let sunflower = new Flower('Sunflower', 'sunflower.png');
         let tulip = new Flower('Tulip', 'tulip.png');
         let rose = new Flower('Rose', 'rose.png');
@@ -100,6 +100,60 @@
             rose,
             waterlily
         ];
+        var sorted = false
+        var imageclick = function(event){
+            let lastp = event.path[0].currentSrc.split('/').slice(-1)[0]
+            if(!sorted)
+            {
+                sort(flowers)
+                sorted = true
+            }
+            //  c d a b
+            while (flowers[0].picture != lastp)
+            {
+                flowers.push(flowers.shift())
+            }
+
+            btable(flowers,4)
+
+        }
+        var btable = function(flowers,n){
+           let table = '<table><tr>'
+        for (let i = 0; i < flowers.length;i++)
+        {
+            table += `<td>
+                <img src="images/${flowers[i].picture}" onclick="imageclick(event)">
+                <div style="text-align: center;">${flowers[i].name}</div>
+                </td>`
+            if (i == n-1)
+            {
+                table += '<tr>'
+            }
+        }
+        table += '</tr></table>'
+        let div = document.getElementById('flowersDiv')
+        div.innerHTML = table
+       }
+        var sort = function(input){
+            for (let i = 0; i < input.length; i+= 1)
+            {
+                let minpos = i
+                for(let j = minpos; j < input.length; j += 1)
+                {
+                    if(input[j].name< input[minpos].name)
+                    {
+                        minpos = j
+                    }
+                }
+                //At this minpos minpos hold the index of small value.
+                let temp = input[i]
+                input[i] = input[minpos]
+                input[minpos] = temp
+            }
+        }
+
+       btable(flowers,4)
+       
     </script>
 </body>
 

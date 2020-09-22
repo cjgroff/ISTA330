@@ -15,8 +15,7 @@
         and under the image display its name.
     </div>
     <div id='flowersDiv'>
-        <!--
-            <table>
+        <table>
             <tr>
                 <td><img src="images/daffodil.png"><div style="text-align: center;">daffodil</div></td>
                 <td><img src="images/daffodil.png"><div style="text-align: center;">daffodil</div></td>
@@ -25,8 +24,6 @@
             </tr>
             <tr><td><img src="images/daffodil.png"><div style="text-align: center;">daffodil</div></td></tr>
         </table>
-        -->
-    
     </div>
     <script>
         /*
@@ -62,21 +59,6 @@
              rose,
              waterlily
        ];
-       var btable = function(flowers,n){
-           let table = '<table><tr>'
-        for (let i = 0; i < flowers.length;i++)
-        {
-            table += `<td><img src="images/${flowers[i].picture}"><div style="text-align: center;">${flowers[i].name}</div></td>`
-            if (i == n-1)
-            {
-                table += '<tr>'
-            }
-        }
-        table += '</tr></table>'
-        let div = document.getElementById('flowersDiv')
-        div.innerHTML = table
-       }
-       btable(flowers,4)
     </script>
 </body>
 </html>
