@@ -36,4 +36,3 @@ var productOfOthers = function(input) {
     return narry
 };
 
-console.log('hi');
